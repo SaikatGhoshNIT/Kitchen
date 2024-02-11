@@ -1,6 +1,9 @@
 import React from 'react';
 import UserContext from '../../utils/UserContext';
 import { useContext, useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function UserInfo() {
   const { loginUser, setUserName, loginEmail, setUserEmail } = useContext(UserContext);
@@ -48,6 +51,29 @@ function UserInfo() {
           setUserName(name)
           setUserEmail(email)
         }}>Update</button>
+      </div>
+      <div>
+        <Link to="/">
+          <button
+            className="loginBtn"
+            onClick={() => {
+              // btnName === "LogIn"
+              //   ? setBtnName("LogOut")
+              //   : setBtnName("LogIn");
+            }}
+          >
+            <span
+              style={{
+                margin: "5px",
+                padding: "0px 2px",
+                fontWeight: "bolder",
+              }}
+            >
+              LogOut
+            </span>
+            <FontAwesomeIcon icon={faRightToBracket} />
+          </button>
+        </Link>
       </div>
     </div>
   )

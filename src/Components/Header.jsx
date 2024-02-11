@@ -27,7 +27,7 @@ export default function Header() {
           <li>Online Status : {online == true ? "💚" : "❤️"}</li>
           <li>
             <Link
-              to="/"
+              to="/home"
               style={{
                 textDecoration: "none",
                 color: "rgba(131, 34, 34, 0.877)",
@@ -70,14 +70,14 @@ export default function Header() {
               <CartIcon cartItems={cartItems}/>
             </Link>
           </li>
-          <li><Link to="/login">
+          {/*<li><Link to="/login">
             <button
               className="loginBtn"
-              /*onClick={() => {
+              onClick={() => {
                 btnName === "LogIn"
                   ? setBtnName("LogOut")
                   : setBtnName("LogIn");
-              }}*/
+              }}
             >
               <span
                 style={{
@@ -86,12 +86,12 @@ export default function Header() {
                   fontWeight: "bolder",
                 }}
               >
-                {/*btnName*/}
+                {btnName}
                 Login
               </span>
               <FontAwesomeIcon icon={faRightToBracket} />
             </button></Link>
-          </li>
+              </li>*/}
           <li>
             <Link to="/userinfo"  style={{
                 textDecoration: "none",

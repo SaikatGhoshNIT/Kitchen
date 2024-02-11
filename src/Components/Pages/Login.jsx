@@ -78,7 +78,7 @@ export default function Login() {
           />
         </div>
         <div style={{ margin: "15px", padding: "10px" }}>
-          <Link to="/userinfo">
+          <Link to="/home">
             <button
               className="add"
               style={{ position: "static" }}
