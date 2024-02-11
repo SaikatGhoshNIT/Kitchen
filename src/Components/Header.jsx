@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import CartIcon from "./CartIcon";
 
 export default function Header() {
-  const [btnName, setBtnName] = useState("LogIn");
+  //const [btnName, setBtnName] = useState("LogIn");
   //console.log("Header Rerender");
 
   const cartItems = useSelector((store) => store.cart.items);
@@ -70,14 +70,14 @@ export default function Header() {
               <CartIcon cartItems={cartItems}/>
             </Link>
           </li>
-          <li>
+          <li><Link to="/login">
             <button
               className="loginBtn"
-              onClick={() => {
+              /*onClick={() => {
                 btnName === "LogIn"
                   ? setBtnName("LogOut")
                   : setBtnName("LogIn");
-              }}
+              }}*/
             >
               <span
                 style={{
@@ -86,10 +86,11 @@ export default function Header() {
                   fontWeight: "bolder",
                 }}
               >
-                {btnName}
+                {/*btnName*/}
+                Login
               </span>
               <FontAwesomeIcon icon={faRightToBracket} />
-            </button>
+            </button></Link>
           </li>
           <li>
             <Link to="/userinfo"  style={{
