@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import ContactUs from "./Components/Pages/ContactUs"
 import Error from "./Components/Error";
+import Login from "./Components/Pages/Login";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
@@ -22,19 +23,22 @@ const About = lazy (()=> import("./Components/Pages/About"))
 export default function App() {
 
 const [userName, setUserName] = useState("")
+const [userEmail, setUserEmail] = useState("")
 
 useEffect(()=>{
   //Make an API call and send username and password
   const data = {
-    name : "LiSa"
+    name : "LiSa",
+    email : "lisa@gmail.com"
   }
   setUserName(data.name)
+  setUserEmail(data.email)
 },[])
 
 
   return (
     <Provider store={appStore}> 
-    <UserContext.Provider value={{loginUser : userName , setUserName}}>
+    <UserContext.Provider value={{loginUser : userName , setUserName, loginEmail:userEmail, setUserEmail}}>
     <div className="app">
         <Header/>
         <Outlet/>
@@ -52,6 +56,10 @@ const appLayout = createBrowserRouter ([
         {
           path:"/",
           element:<Body/>
+        },
+        {
+          path:"/login",
+          element:<Login/>
         },
         {
           path : "/about",
