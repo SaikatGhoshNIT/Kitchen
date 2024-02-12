@@ -25,21 +25,24 @@ export default function App() {
 
 const [userName, setUserName] = useState("")
 const [userEmail, setUserEmail] = useState("")
+const [userPass, setUserPass] = useState("")
 
 useEffect(()=>{
   //Make an API call and send username and password
   const data = {
     name : "LiSa",
-    email : "lisa@gmail.com"
+    email : "lisa@gmail.com",
+    password : "lisa@123"
   }
   setUserName(data.name)
   setUserEmail(data.email)
+  setUserPass(data.password)
 },[])
 
 
   return (
     <Provider store={appStore}> 
-    <UserContext.Provider value={{loginUser : userName , setUserName, loginEmail:userEmail, setUserEmail}}>
+    <UserContext.Provider value={{loginUser : userName , setUserName, loginEmail:userEmail, setUserEmail,loginPassword:userPass}}>
     <div className="app">
         <Header/>
         <Outlet/>

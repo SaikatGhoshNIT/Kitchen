@@ -49,7 +49,7 @@ function Cart() {
       marginBottom:"10px",
       color:"rgba(203, 84, 63, 0.877)"}}>
         <h1>Hey! Your Cart is looking Empty, Please Add some Amazing dishes.</h1>
-      <Link to="/">
+      <Link to="/home">
       <button className="add" style={{position:"static"}}>Add Items</button> 
       </Link>
       </div>

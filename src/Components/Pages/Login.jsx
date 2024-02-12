@@ -2,11 +2,18 @@ import React from "react";
 import UserContext from "../../utils/UserContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom/dist";
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
-  const { setUserName , setUserEmail} = useContext(UserContext);
+  const {loginUser, setUserName, loginEmail, setUserEmail, loginPassword} = useContext(UserContext);
   const [name, setName] = useState("");
-  const [email,setEmail]=useState("")
+  const [email,setEmail]=useState("");
+  const [pass,setPass]=useState("");
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `home`; 
+    navigate(path);
+  }
   return (
     <div
       style={{
@@ -74,24 +81,29 @@ export default function Login() {
               height: "20px",
               borderRadius: "50px",
             }}
-            onChange={(e) => e.target}
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
           />
         </div>
         <div style={{ margin: "15px", padding: "10px" }}>
-          <Link to="/home">
+          
             <button
               className="add"
               style={{ position: "static" }}
-              onClick={(e) => {
+              onClick={() => {
+                if(name != loginUser){
+                  console.log("You are not a valid user");
+                }
+                routeChange()
                 //e.preventDefault();
-                setUserName(name);
-                setUserEmail(email)
+                // setUserName(name);
+                // setUserEmail(email)
                 //console.log("Button clicked");
               }}
             >
               Login
             </button>
-          </Link>
+          
         </div>
       </div>
     </div>

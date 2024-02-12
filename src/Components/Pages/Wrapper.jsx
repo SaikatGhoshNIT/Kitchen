@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { WELCOME_URL } from "../../utils/constants";
+import { LOGO_URL } from "../../utils/constants";
 
 export default function Wrapper() {
   return (
@@ -15,7 +15,7 @@ export default function Wrapper() {
       }}
     >
       <div style={{margin:"20px 10px 10px 10px", padding:"20px"}}>
-        <img src={WELCOME_URL} alt="Login Image" />
+        <img style={{width:"400px",height:"auto"}} src={LOGO_URL} alt="Login Image" />
       </div>
       <div style={{textAlign:"center"}}><h2>Welcome to Kitchen.</h2><h3>Please Login here to Order your food at your doorstep.</h3></div>
       <div>
