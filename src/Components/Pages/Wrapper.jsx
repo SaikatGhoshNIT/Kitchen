@@ -19,7 +19,7 @@ export default function Wrapper() {
       </div>
       <div style={{textAlign:"center"}}><h2>Welcome to Kitchen.</h2><h3>Please Login here to Order your food at your doorstep.</h3></div>
       <div>
-        <Link to="/login">
+        <Link to="/home">
           <button
             className="loginBtn"
             onClick={() => {
